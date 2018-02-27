@@ -1,24 +1,29 @@
 module.exports = `
-    type User {
+    type TodoItem {
         id: ID!,
-        name: String!,
-        friends: [User],
-        hobbies: [Hobby]
-    }
-    
-    type Hobby {
-        id: ID!,
-        name: String!
+        title: String!,
+        description: String!,
+        photoUrl: String!,
+        isFinished: Boolean!
     }
     
     type Query {
-        users: [User],
-        user(id: Int): User,
-        hobbies: [Hobby],
-        hobby(id: Int): Hobby
+        getAll: [TodoItem],
+        getById(id: ID): TodoItem,
+        getByIsFinished(isFinished: Boolean): [TodoItem],
+    }
+    
+    type Mutation {
+        create(title: String, description: String, photoUrl: String): Boolean,
+        updateTitle(id: ID, title: String): Boolean,
+        finish(id: ID): Boolean,
+        reopen(id: ID): Boolean,
+        finishAll: Boolean,
+        reopenAll: Boolean
     }
     
     schema {
-        query: Query
+        query: Query,
+        mutation: Mutation
     }
 `;
