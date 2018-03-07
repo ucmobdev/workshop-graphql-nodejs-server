@@ -1,10 +1,9 @@
 module.exports = `
     type TodoItem {
-        id: ID!,
-        title: String!,
-        description: String!,
-        photoUrl: String!,
-        isFinished: Boolean!
+        id: ID,
+        title: String,
+        description: String,
+        isFinished: Boolean
     }
     
     type Query {
@@ -14,7 +13,7 @@ module.exports = `
     }
     
     type Mutation {
-        create(title: String, description: String, photoUrl: String): Boolean,
+        create(title: String, description: String): Boolean,
         updateTitle(id: ID, title: String): Boolean,
         finish(id: ID): Boolean,
         reopen(id: ID): Boolean,

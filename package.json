@@ -1,13 +1,4 @@
 {
-  "name": "graphql-example2",
-  "version": "1.0.0",
-  "description": "graphql example",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
     "express-graphql": "^0.6.12",
