@@ -4,13 +4,13 @@ const graphqlTools = require("graphql-tools");
 
 const server = express();
 
-const schema = graphqlTools.makeExecutableSchema({
-    typeDefs: require('./data/typeDefs.js'),
+const executableSchema = graphqlTools.makeExecutableSchema({
+    typeDefs: require('./data/schema.js'),
     resolvers: require('./data/resolvers.js')
 });
 
 const handler = expressGraphql({
-    schema: schema,
+    schema: executableSchema,
     graphiql: true
 });
 
